@@ -1,16 +1,18 @@
 # ============================================================
-# CELL 1: GitHub Config
+# GitHub Config
 # ============================================================
 
-from kaggle_secrets import UserSecretsClient
+import os
 import requests
 import base64
 
 # --------------------------------------------------
 # Secrets
 # --------------------------------------------------
-user_secrets = UserSecretsClient()
-GITHUB_TOKEN = user_secrets.get_secret("SavvyResearcherGitHub")
+GITHUB_TOKEN = os.getenv("GITHUB_TOKEN")
+
+if not GITHUB_TOKEN:
+    raise ValueError("Missing GITHUB_TOKEN environment variable")
 
 # --------------------------------------------------
 # Repo Config
@@ -48,7 +50,7 @@ def get_sha(path):
 
 
 # ============================================================
-# 🔥 View FULL Repo Tree (All folders + files)
+# View FULL Repo Tree (All folders + files)
 # ============================================================
 
 def view_file_list():
@@ -83,6 +85,7 @@ def read_file(path):
 
     if r.status_code != 200:
         print(f"❌ Failed to read file: {path}")
+        print(r.text)
         return
 
     data = r.json()
