@@ -1,1 +1,0 @@
-# this folder will have the api setuo for gmail
