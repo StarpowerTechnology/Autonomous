@@ -1,1 +1,0 @@
-all web results automatically get saved in this folder
