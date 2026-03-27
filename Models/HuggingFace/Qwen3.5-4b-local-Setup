@@ -1,7 +1,7 @@
 # Load model directly
 from transformers import AutoProcessor, AutoModelForImageTextToText
 
-processor = AutoProcessor.from_pretrained("Qwen/Qwen3.5-9B")
+processor = AutoProcessor.from_pretrained("Qwen/Qwen3.5-4B")
 model = AutoModelForImageTextToText.from_pretrained("Qwen/Qwen3.5-9B")
 messages = [
     {
