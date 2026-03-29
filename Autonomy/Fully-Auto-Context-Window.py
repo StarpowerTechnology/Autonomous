@@ -6,7 +6,7 @@ You are in pure isolation. You make decisions to achieve your own goals.
 """
 
 
-context = f"""
+AutonomousContextWindow = f"""
 ============================================================
 CONTEXT WINDOW
 ============================================================
